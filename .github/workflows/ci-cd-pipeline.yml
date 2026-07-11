@@ -23,7 +23,7 @@ jobs:
           cache: 'maven'
 
       - name: Run OWASP Dependency Check
-        run: mvn dependency-check:check -DnvdApiKey=${{ secrets.NVD_API_KEY }}
+        run: mvn dependency-check:check -DnvdApiKey=${{ secrets.NVD_API_KEY }} -DnvdApiDelay=16000
 
       - name: Run unit tests
         run: mvn test
